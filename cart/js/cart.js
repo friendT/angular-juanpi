@@ -41,9 +41,9 @@ app.controller('CartCtrl', ['$css', 'cartSer', 'cartFac', '$scope', '$interval',
 			second.style.display = "block";
 
 		}
-		$scope.delect = function() {
-
+		$scope.delect = function() {         
 			ss(this.item);
+			js();
 		}
 		$scope.delectArr = function() {
 			arrs.splice(this.index, 1);

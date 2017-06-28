@@ -54,3 +54,11 @@
 .class2{
 	height: 100%;
 }
+#loding{
+	width: 10rem;
+	height: 16.5rem;
+	text-align: center;
+	line-height: 16.5rem;
+	background: #ededed;
+	display: none;
+}

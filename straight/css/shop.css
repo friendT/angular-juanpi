@@ -66,12 +66,12 @@
 	margin-bottom: 1.212121rem;
 }
 .shop .rank_list li{
+	text-align: center;
+	width: 3.3rem;
 	padding: 0 0.757575rem;
 	border-right: 0.030303rem solid #eeeeee;
 }
-.shop .rank_list li:last-of-type{
-	border-right: none;
-}
+
 
 /*-----改动+++添加了地图功能---------*/
 #main_dt a{

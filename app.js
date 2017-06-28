@@ -9,6 +9,7 @@ var app = angular.module('myApp', ['ui.router', 'angularCSS','me-lazyload'])
 			} else {
 				$rootScope.rootIsFooterShow = true;
 			}
+			
 		});
 	}])
 	.config(['$stateProvider', '$urlRouterProvider',
@@ -40,7 +41,7 @@ var app = angular.module('myApp', ['ui.router', 'angularCSS','me-lazyload'])
 			    .state('shoucang', {
 			    	url: '/shoucang',
 			        templateUrl: './straight/shoucang.html',
-			        // controller:'ShouCtrl as shouctrl'
+			        controller:'ShouCtrl as shouctrl'
 			    })
 			    .state('shoucang.favourite', {
 			    	url: '/favourite',

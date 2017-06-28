@@ -20,6 +20,7 @@ app.controller('StrCtrl', ['$css', 'strSer', 'strFac','$scope', '$rootScope', '$
 		strSer.remove();
 		
 	}])
+
 	.controller('ShopCtrl', ['strSer', '$scope', '$location', 'cartSer', '$http', '$state', function(strSer,$scope, $location,cartSer,$http,$state){
 		$http.get('http://127.0.0.1:8020/juanpiwang/straight/js/global-healthCare.json').success(function(data){
 			$scope.data = data.list;
@@ -27,7 +28,10 @@ app.controller('StrCtrl', ['$css', 'strSer', 'strFac','$scope', '$rootScope', '$
 		$scope.showGoods = function(){
 			$state.go('substr',{id:JSON.stringify(this.item)});
 		}
+//		$scope.rq = 599;
+//		$scope.xl = 220;
 	}])
+	
 	.controller('Substr', ['strSer', '$scope', '$location', 'cartSer', '$stateParams', '$state', 'favSer',function(strSer,$scope, $location,cartSer,$stateParams,$state,favSer){
 		$scope.goback = function(){
 			window.history.back();
@@ -117,5 +121,13 @@ app.controller('StrCtrl', ['$css', 'strSer', 'strFac','$scope', '$rootScope', '$
 		$scope.arr = favSer.zhanshi();
 		
 	}])
-
+	.controller('ShouCtrl',['$scope','$stateParams',function($scope,$stateParams){
+		
+		
+		$('.item_tab a').on('click',function(){
+			$('.item_tab a').removeClass('active');
+			$(this).toggleClass('active');
+		})
+		
+	}])
 	

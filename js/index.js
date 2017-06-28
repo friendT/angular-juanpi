@@ -12,14 +12,30 @@ myEvent(window,'load',function(){
 	var pH=document.documentElement.clientHeight;
 	var timer=null;
 	var scrollTop;
-
+var flags = true;
+var value = null;
+var timer222 = setInterval(timerss,3000);
 window.onscroll=function(){
 	scrollTop = window.pageYOffset 
 	|| document.documentElement.scrollTop 
 	|| document.body.scrollTop 
 	|| 0;
+    value = scrollTop;
+    clearInterval(timer222);
+    timer222 = setInterval(timerss,3000);
+    
 	};
-
+      
+    function timerss(){
+    	if(document.body.scrollTop == value){
+    	document.querySelector("#back_top").style.display = "none";
+    	 
+    	}else{
+    	document.querySelector("#back_top").style.display = "block";
+    	
+    	}
+    	clearInterval(timer222);
+    }
 	oRTT.onclick=function(){
 		clearInterval(timer);
 		timer=setInterval(function(){
@@ -88,3 +104,31 @@ window.onscroll=function(){
 	   picInit();
 	   $(".five").attr("src","comimg/44.png");
 	});
+	if(window.location.href != 'http://127.0.0.1:8020/juanpiwang/index.html'){
+		window.onload = function() {
+	        window.name = "test"; // 刷新当前页面，window.name并不会销毁
+	        if( window.name == "test"){
+	        	$("#loding").css('display','block')
+	        	var timer = setTimeout(function(){
+	        		$("#loding").css('display','none');
+	        	},1000);
+	            
+	        }
+	  		
+	    };
+	}
+	
+	$('.footer li').on('click',function(){
+		var arr = ['http://127.0.0.1:8020/juanpiwang/index.html']
+		
+		arr.push(window.location.href);
+		if(arr[0] != arr[1]){
+        	$("#loding").css('display','block')
+        	var timer = setTimeout(function(){
+        		$("#loding").css('display','none')
+        		num = 2;
+        	},1000);
+        	
+		}
+	})
+	
